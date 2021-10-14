@@ -15,7 +15,9 @@
   <div class="content">
     <div class="header">
       <h1>{{ title }}</h1>
+      <!-- Upload -->
       <button @click="toggleAddEditModal('add')" class="addImage" v-show="loggedIn">Add New Image</button>
+      <!-- Upload -->
       <input v-model="imagesSearchString" placeholder="Cari Gambar Apa?" />
       <button class="reset" @click="resetSearchString()">Reset</button>
       <p>
