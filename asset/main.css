@@ -55,31 +55,7 @@ a {
   text-decoration: none;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-p {
-  font-size: var(--font-regular);
-  color: var(--color-grey);
-  line-height: 23px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-black);
-  text-transform: capitalize;
-}
-h2 {
-  font-size: var(--section-title);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: 70px;
-  text-transform: capitalize;
-}
+
 
 /* Classes */
 .ptb-100 {
