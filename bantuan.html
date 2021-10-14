@@ -1,0 +1,485 @@
+<style>
+  /* CSS Multiple Whatsapp Chat */
+#whatsapp-chat{position:fixed;background:#fff;width:350px;border-radius:10px;box-shadow:0 1px 15px rgba(32,33,36,.28);bottom:90px;right:30px;overflow:hidden;z-index:99;animation-name:showchat;animation-duration:1s;transform:scale(1)}a.blantershow-chat{background:linear-gradient(to right top,#6f96f3,#164ed2);color:#fff;position:fixed;z-index:98;bottom:25px;right:30px;font-size:15px;padding:10px 20px;border-radius:30px;box-shadow:0 1px 15px rgba(32,33,36,.28)}a.blantershow-chat i{transform:scale(1.2);margin:0 10px 0 0}.header-chat{background:linear-gradient(to right top,#6f96f3,#164ed2);color:#fff;padding:20px}.header-chat h3{margin:0 0 10px}.header-chat p{font-size:14px;line-height:1.7;margin:0}.info-avatar{position:relative}.info-avatar img{border-radius:100%;width:50px;float:left;margin:0 10px 0 0}.info-avatar:before{content:'\f232';z-index:1;font-family:"Font Awesome 5 Brands";background:#23ab23;color:#fff;padding:4px 5px;border-radius:100%;position:absolute;top:30px;left:30px}a.informasi{padding:20px;display:block;overflow:hidden;animation-name:showhide;animation-duration:2.5s}a.informasi:hover{background:#f1f1f1}.info-chat span{display:block}#get-label,span.chat-label{font-size:12px;color:#888}#get-nama,span.chat-nama{margin:5px 0 0;font-size:15px;font-weight:700;color:#222}#get-label,#get-nama{color:#fff}span.my-number{display:none}.blanter-msg{color:#444;padding:20px;font-size:12.5px;text-align:center;border-top:1px solid #ddd}textarea#chat-input{border:none;font-family:'Arial',sans-serif;width:100%;height:20px;outline:none;resize:none}a#send-it{color:#555;width:60px;margin:-5px 0 0 5px;font-weight:700;padding:8px;background:#eee;border-radius:10px}.first-msg{background:#f5f5f5;padding:30px;text-align:center}.first-msg span{background:#e2e2e2;color:#333;font-size:14.2px;line-height:1.7;border-radius:10px;padding:15px 20px;display:inline-block}.start-chat .blanter-msg{display:flex}#get-number{display:none}a.close-chat{position:absolute;top:5px;right:15px;color:#fff;font-size:30px}@keyframes showhide{from{transform:scale(.5);opacity:0}}@keyframes showchat{from{transform:scale(0);opacity:0}}@media screen and (max-width:480px){#whatsapp-chat{width:auto;left:5%;right:5%;font-size:80%}}.hide{display:none;animation-name:showhide;animation-duration:1.5s;transform:scale(1);opacity:1}.show{display:block;animation-name:showhide;animation-duration:1.5s;transform:scale(1);opacity:1}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Andre</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+    <link rel="stylesheet" href="asset/main.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+      <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css'>
+    <link rel="stylesheet" href="assets/css/owl.theme.green.css">
+    
+    <!-- ::::::::::::::Favicon icon::::::::::::::-->
+    <link rel="shortcut icon" href="https://i.ibb.co/0J29qGd/Logo-Maker-24092021-153706.jpg" type="image/png">
+
+</head>
+
+<body>
+
+
+        <!-- features --
+        <section class="features">
+            <div class="container">
+                <div class="features-inner d-grid">
+                    <div class="feature-item d-flex">
+                        <div class="icon d-flex color1">
+                            <img src="assets/images/experience.svg" alt="experience">
+                        </div>
+                        <div>
+                            <h3>5+</h3>
+                            <p>Experience</p>
+                        </div>
+                    </div>
+                    <div class="feature-item d-flex">
+                        <div class="icon d-flex color2">
+                            <img src="assets/images/happy-clients.svg" alt="happy clients ">
+                        </div>
+                        <div>
+                            <h3>73</h3>
+                            <p>happy clients</p>
+                        </div>
+                    </div>
+                    <div class="feature-item d-flex">
+                        <div class="icon d-flex color3">
+                            <img src="assets/images/projects-completed.svg" alt="happy clients ">
+                        </div>
+                        <div>
+                            <h3>120+</h3>
+                            <p>Projects completed</p>
+                        </div>
+                    </div>
+                    <div class="feature-item d-flex">
+                        <div class="icon d-flex  color4">
+                            <img src="assets/images/awards-won.svg" alt="awards ">
+                        </div>
+                        <div>
+                            <h3>10+</h3>
+                            <p>Awards won</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience --
+        <section class="experience ptb-100">
+            <div class="container">
+                <h2>Experienced in </h2>
+                <div class="experience-inner d-grid">
+                    <!-- item --
+                    <div class="progressbar-item">
+                        <div class="progressbar-content d-flex">
+                            <h3>Figma</h3>
+                            <h4>95%</h4>
+                        </div>
+                        <div class="progessbar-bg">
+                            <div class="progressbar-size" style="width:95%">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item --
+                    <div class="progressbar-item">
+                        <div class="progressbar-content d-flex">
+                            <h3>Adobe xd</h3>
+                            <h4>85%</h4>
+                        </div>
+                        <div class="progessbar-bg">
+                            <div class="progressbar-size" style="width:85%">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item --
+                    <div class="progressbar-item">
+                        <div class="progressbar-content d-flex">
+                            <h3>Photoshop</h3>
+                            <h4>90%</h4>
+                        </div>
+                        <div class="progessbar-bg">
+                            <div class="progressbar-size" style="width:90%">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item --
+                    <div class="progressbar-item">
+                        <div class="progressbar-content d-flex">
+                            <h3>illustrator</h3>
+                            <h4>80%</h4>
+                        </div>
+                        <div class="progessbar-bg">
+                            <div class="progressbar-size" style="width:80%">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item --
+                    <div class="progressbar-item">
+                        <div class="progressbar-content d-flex">
+                            <h3>Html</h3>
+                            <h4>96%</h4>
+                        </div>
+                        <div class="progessbar-bg">
+                            <div class="progressbar-size" style="width:96%">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item --
+                    <div class="progressbar-item">
+                        <div class="progressbar-content d-flex">
+                            <h3>Css</h3>
+                            <h4>96%</h4>
+                        </div>
+                        <div class="progessbar-bg">
+                            <div class="progressbar-size" style="width:96%">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item --
+                    <div class="progressbar-item">
+                        <div class="progressbar-content d-flex">
+                            <h3>Javascript</h3>
+                            <h4>75%</h4>
+                        </div>
+                        <div class="progessbar-bg">
+                            <div class="progressbar-size" style="width:75%">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item --
+                    <div class="progressbar-item">
+                        <div class="progressbar-content d-flex">
+                            <h3>React Js</h3>
+                            <h4>70%</h4>
+                        </div>
+                        <div class="progessbar-bg">
+                            <div class="progressbar-size" style="width:70%">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services ptb-100" id="services">
+            <div class="container">
+                <h2 style="text-align: center;">FAQ</h2>
+                <div class="services-inner d-grid">
+                    <!-- item -->
+                    <div class="services-block">
+                        <div class="service-icon">
+                        </div>
+                        <h3>Cara Upload Design?</h3><br><hr><br>
+                        <p>Login Pada Tampilan Home Setelah Login Akan Di Arahkan Ke Form Untuk Mengisi Data Dan Mengirim Gambar Design Tersebut, Maka Tunggu 1-2 Hari Kami Akan Mengupload Design Tersebut.</p>
+                    </div>
+                    
+                    <!-- item --
+                    <div class="services-block">
+                        <div class="service-icon color2 d-flex">
+                            <img src="assets/images/services/web-dev.svg" alt="web dev">
+                        </div>
+                        <h3>Web development</h3>
+                        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                            Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker
+                            including
+                            versions of Lorem Ipsum.</p>
+                    </div>
+                    
+                    <!-- item --
+                    <div class="services-block">
+                        <div class="service-icon color3 d-flex">
+                            <img src="assets/images/services/illustration.svg" alt="illustration">
+                        </div>
+                        <h3>illustration</h3>
+                        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                            Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker
+                            including
+                            versions of Lorem Ipsum.</p>
+                    </div>
+                    
+                    <!-- item --
+                    <div class="services-block">
+                        <div class="service-icon color4 d-flex">
+                            <img src="assets/images/services/seo.svg" alt="SEO ">
+                        </div>
+                        <h3>SEO </h3>
+                        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                            Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker
+                            including
+                            versions of Lorem Ipsum.</p>
+                    </div>
+                    
+                    <!-- item --
+                    <div class="services-block">
+                        <div class="service-icon color5 d-flex">
+                            <img src="assets/images/services/content-writing.svg" alt="Content writing ">
+                        </div>
+                        <h3>Content writing </h3>
+                        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                            Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker
+                            including
+                            versions of Lorem Ipsum.</p>
+                    </div>
+                    
+                    <!-- item --
+                    <div class="services-block">
+                        <div class="service-icon color6 d-flex">
+                            <img src="assets/images/services/youtube.svg" alt="youtube ">
+                        </div>
+                        <h3>Youtube marketing </h3>
+                        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                            Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker
+                            including
+                            versions of Lorem Ipsum.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA --
+        <section class="cta">
+            <div class="container">
+                <div class="cta-inner d-flex">
+                    <div class="cta-content">
+                        <h3>Have a project in mind?</h3>
+                        <p>Get FREE estimate! is a long established fact that a reader will be distracted </p>
+                    </div>
+                    <a href="#contact" class="btn btn-default ">Contact now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testmonial --
+        <section class="testmonial">
+            <div class="container">
+                <div class="testmonial-inner">
+                    <h2>Happy Clients </h2>
+                    <div class="testmonial-slider owl-carousel owl-theme">
+                        <!-- item --
+                        <div class="testmonial-item">
+                            <h3>Ui design project</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum is
+                                simply
+                                dummy text of the printing and typesetting industry. simply dummy text of the
+                                printing
+                                and
+                                typesetting industry. </p>
+                            <div class="client-data d-flex">
+                                <img src="assets/images/client-1.png" alt="client thumb">
+                                <h4>Bob Frapples
+                                    <br> <span>CEO Finance</span>
+                                </h4>
+
+                            </div>
+                        </div>
+                        
+                        <!-- item --
+                        <div class="testmonial-item">
+                            <h3>Expert front-end developer</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum is
+                                simply
+                                dummy text of the printing and typesetting industry. simply dummy text of the
+                                printing
+                                and
+                                typesetting industry. </p>
+                            <div class="client-data d-flex">
+                                <img src="assets/images/client-2.png" alt="client thumb">
+                                <h4>Brock Lee
+                                    <br> <span>Finace expert</span>
+                                </h4>
+
+                            </div>
+                        </div>
+                        
+                        <!-- item --
+                        <div class="testmonial-item">
+                            <h3>Ui design project</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum is
+                                simply
+                                dummy text of the printing and typesetting industry. simply dummy text of the
+                                printing
+                                and
+                                typesetting industry. </p>
+                            <div class="client-data d-flex">
+                                <img src="assets/images/client-1.png" alt="client thumb">
+                                <h4>Bob Frapples
+                                    <br> <span>CEO Finance</span>
+                                </h4>
+
+                            </div>
+                        </div>
+                        <div class="testmonial-item">
+                            <h3>Expert front-end developer</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum is
+                                simply
+                                dummy text of the printing and typesetting industry. simply dummy text of the
+                                printing
+                                and
+                                typesetting industry. </p>
+                            <div class="client-data d-flex">
+                                <img src="assets/images/client-2.png" alt="client thumb">
+                                <h4>Brock Lee
+                                    <br> <span>Finace expert</span>
+                                </h4>
+
+                            </div>
+                        </div>
+                        
+                        <!-- item --
+                        <div class="testmonial-item">
+                            <h3>Ui design project</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum is
+                                simply
+                                dummy text of the printing and typesetting industry. simply dummy text of the
+                                printing
+                                and
+                                typesetting industry. </p>
+                            <div class="client-data d-flex">
+                                <img src="assets/images/client-1.png" alt="client thumb">
+                                <h4>Bob Frapples
+                                    <br> <span>CEO Finance</span>
+                                </h4>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer --
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#" class="footer-logo"><img src="assets/images/logo-footer.svg" alt="Footer logo"></a>
+                <div class="footer-nav">
+                    <ul>
+                        <li class="f-navlinks"><a href="#">Home</a></li>
+                        <li class="f-navlinks"><a href="#">About</a></li>
+                        <li class="f-navlinks"><a href="#">Services</a></li>
+                        <li class="f-navlinks"><a href="#">Portfolio</a></li>
+                        <li class="f-navlinks"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-bottom d-flex">
+                    <p class="copyright">Ali Mohd © Copyright 2020. All Right Reserved.</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social"><img src="assets/images/social-icons/feather_instagram.svg"
+                                alt="instagram"></a>
+                        <a href="#" class="footer-social"><img src="assets/images/social-icons/feather_linkedin.svg"
+                                alt="linkedin"></a>
+                        <a href="#" class="footer-social"><img src="assets/images/social-icons/feather_github.svg"
+                                alt="github"></a>
+                        <a href="#" class="footer-social"><img src="assets/images/social-icons/feather_dribbble.svg"
+                                alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Project view modal -->
+    <div class="modal-container">
+        <div class="modal">
+            <div class="modal-image">
+                <img src="assets/images/projects/1.jpg" alt="image">
+            </div>
+            <div class="modal-content">
+
+                <h3>Create a landing page & convert to HTML</h3>
+                <p class="requirments">Client’s requriements were to create a design for mobile applicaton after the
+                    approval of design convert design to responsive HTML</p>
+
+                <ul>
+                    <li><span>Skills:-</span> HTML, CSS, BOOTSTRAP 4, JAVASCRIPT, FIGMA, PHOTOSHOP</li>
+                    <li><span>Project duration:-</span>15 days</li>
+                    <li><span>Project url:-</span> <a
+                            href="https://www.youtube.com/channel/UCD82KIkpQ5dtQYFzxLejzGg">https://www.youtube.com/channel/UCD82KIkpQ5dtQYFzxLejzGg</a>
+                    </li>
+                </ul>
+
+                <div class="close-btn">
+                    <a href="javascript:void(0)" class="btn btn-blue close-modal">Close Modal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll up --
+    <a href="javascript:void(0)" class="scrollup">
+        <img src="assets/images/uparrow.svg" alt="arrow up">
+    </a>
+    <!--s-->
+    
+    <div id='whatsapp-chat' class='hide'>
+<div class='header-chat'>
+  
+<div class='head-home'><h3>Hai!</h3>
+<p style="color: white;">Click one of our representatives below to chat on WhatsApp or send us an email to andrep13.id@gmail.com</p></div>
+<div class='get-new hide'><div id='get-label'></div><div id='get-nama'></div></div></div>
+<div class='home-chat'>
+<!-- Info Contact Start -->
+<a class='informasi' href='javascript:void' title='Chat Whatsapp'>
+<div class='info-avatar'><img src='https://2.bp.blogspot.com/-y6xNA_8TpFo/XXWzkdYk0MI/AAAAAAAAA5s/RCzTBJ_FbMwVt5AEZKekwQqiDNqdNQJjgCLcBGAs/s70/supportmale.png'/></div>
+<div class='info-chat'>
+<span class='chat-label'>Support</span>
+<span class='chat-nama'>Customer Service 1</span>
+</div><span class='my-number'>6285748805799</span>
+</a>
+<!-- Info Contact End -->
+<!-- Info Contact Start --
+<a class='informasi' href='javascript:void' title='Chat Whatsapp'>
+<div class='info-avatar'><img src='https://4.bp.blogspot.com/-X1Xs2iRKabY/XXWzkqQ-iDI/AAAAAAAAA5w/HSyhR0gIXvUzlAx5XgaZzmlrCJkTgrOFQCLcBGAs/s70/supportfemale.png'/></div>
+<div class='info-chat'>
+<span class='chat-label'>Sales</span>
+<span class='chat-nama'>Customer Service 2</span>
+</div><span class='my-number'>6285748805799</span>
+</a>
+<!-- Info Contact End -->
+<div class='blanter-msg'>&#169; 2021<b> Andrep13 </b> <i>All rigths reserved.</i></div></div>
+<div class='start-chat hide'>
+<div class='first-msg'><span>Hallo, Ada Yang Bisa Saya Bantu?</span></div>
+<div class='blanter-msg'><textarea id='chat-input' placeholder='Kirim Pesan' maxlength='120' row='1'></textarea>
+<a href='javascript:void;' id='send-it'>Kirim</a></div></div>
+<div id='get-number'></div><a class='close-chat' href='javascript:void'>×</a>
+</div>
+<a class='blantershow-chat' href='javascript:void' title='Show Chat'><i class='fab fa-whatsapp'></i>Butuh Bantuan?</a>
+<!-- partial -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script></script>
+</body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
+<script src="assets/owl.carousel.js"></script>
+<script src="asset/validate.js"></script>
+<script src="asset/main.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#basic-form").validate();
+    });
+      /* Whatsapp Chat Widget by www.idblanter.com */
+$(document).on("click","#send-it",function(){var a=document.getElementById("chat-input");if(""!=a.value){var b=$("#get-number").text(),c=document.getElementById("chat-input").value,d="https://web.whatsapp.com/send",e=b,f="&text="+c;if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))var d="whatsapp://send";var g=d+"?phone="+e+f;window.open(g, '_blank')}}),$(document).on("click",".informasi",function(){document.getElementById("get-number").innerHTML=$(this).children(".my-number").text(),$(".start-chat,.get-new").addClass("show").removeClass("hide"),$(".home-chat,.head-home").addClass("hide").removeClass("show"),document.getElementById("get-nama").innerHTML=$(this).children(".info-chat").children(".chat-nama").text(),document.getElementById("get-label").innerHTML=$(this).children(".info-chat").children(".chat-label").text()}),$(document).on("click",".close-chat",function(){$("#whatsapp-chat").addClass("hide").removeClass("show")}),$(document).on("click",".blantershow-chat",function(){$("#whatsapp-chat").addClass("show").removeClass("hide")});
+</script>
+
+</html>

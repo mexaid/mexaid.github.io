@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500,700");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #6b91ee;
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.file-upload__modal {
+  display: grid;
+  width: 350px;
+  margin: 50px auto;
+  padding: 25px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px 0 rgba(51, 46, 58, 0.1);
+}
+
+.file-upload__modal-title {
+  margin-bottom: 30px;
+  color: #3d4852;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.file-upload__error {
+  display: none;
+  margin: 0 25px 30px;
+  color: #ed655e;
+  font-size: 14px;
+}
+
+.file__list {
+  margin: 0 25px;
+}
+
+.file-upload__form {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  width: 300px;
+  height: 150px;
+  margin: 0 25px;
+  transition: all 0.3s;
+  border: 2px dashed rgba(104, 142, 232, 0.3);
+  border-radius: 15px;
+}
+.file-upload__form:hover {
+  border: 2px dashed #688ee8;
+}
+
+.file__input {
+  display: none;
+}
+
+.file__input-label {
+  width: 150px;
+  color: #3d4852;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.file__input-label-button {
+  background-color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+  line-height: 1.5;
+  transition: all 0.3s;
+  color: #688ee8;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+}
+.file__input-label-button:hover {
+  color: rgba(104, 142, 232, 0.3);
+}
+
+.file-details__container {
+  display: grid;
+  grid-template-columns: 235px 20px;
+  padding-left: 15px;
+}
+
+.file-output__list-item {
+  display: grid;
+  grid-template-columns: 1fr -webkit-min-content;
+  grid-template-columns: 1fr min-content;
+  align-items: end;
+  margin: 0 auto 25px;
+  list-style: none;
+}
+
+.file-output__list-item-image {
+  display: inline;
+  width: 30px;
+  height: 38px;
+  opacity: 0.4;
+}
+
+.file-output__list-item-name {
+  margin-bottom: 10px;
+  opacity: 0.4;
+  font-size: 13px;
+}
+
+.file-output__list-item--is-complete {
+  display: flex;
+  align-self: center;
+  width: 10px;
+  height: 10px;
+}
+
+.file-output__progress-bar {
+  width: 255px;
+}
+
+.file-output__progress-bar[value] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 2px;
+  -moz-column-span: 1/3;
+       column-span: 1/3;
+}
+
+.file-output__progress-bar[value]::-webkit-progress-bar {
+  background-color: rgba(237, 101, 94, 0.2);
+}
+
+.progress-bar--in-progress[value]::-webkit-progress-value {
+  background-color: #ed655e;
+}
+
+.progress-bar--is-finished[value]::-webkit-progress-value {
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  background-color: #6cc08a;
+}

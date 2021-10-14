@@ -1,0 +1,956 @@
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat';
+  background: #242C39;
+  color: #fff;
+}
+
+.live {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+  padding: 30px 0 0 20px;
+  margin-bottom: 20px;
+}
+
+.live .person {
+  position: relative;
+  margin-right: 30px;
+  text-align: center;
+}
+
+.live .profile-pic {
+  position: relative;
+  background-position: 50%;
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.live .person:nth-child(1) .profile-pic {background-image: url('https://i.ibb.co/5BM95rz/instalizer-121254751-673632473266024-2203165675649236248-n.jpg');}
+.live .person:nth-child(2) .profile-pic {background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');}
+.live .person:nth-child(3) .profile-pic {background-image: url('https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=815&q=80');}
+.live .person:nth-child(4) .profile-pic {background-image: url('https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');}
+.live .person:nth-child(5) .profile-pic {background-image: url('https://images.unsplash.com/photo-1505503693641-1926193e8d57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');}
+.live .person:nth-child(6) .profile-pic {background-image: url('https://images.unsplash.com/photo-1484588168347-9d835bb09939?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');}
+.live .person:nth-child(7) .profile-pic {background-image: url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80./img/07.jpg');}
+.live .person:nth-child(8) .profile-pic {background-image: url('https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');}
+
+
+.live .profile-pic::before {
+  content: '';
+  display: inline-block;
+  border: 3px solid #454D5A;
+  padding: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.live .person .name {
+  font-size: 12px;
+  padding-top: 20px;
+}
+
+.live-active .profile-pic:before {
+  border-color: #FFDF3B !important;
+}
+
+.live-active span {
+  background: #FFDF3B;
+  color: #000;
+  width: 50px;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 50px;
+  padding: 2px 0;
+  font-weight: 600;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.live-active i {
+  padding-right: 3px;
+}
+
+.newsfeed {
+  padding: 0 20px;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  background: #242C39;
+  box-shadow: 0 0 12px 2px rgba(0, 0, 0, .5);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.card .picture {
+  background-image: url('https://i.ibb.co/GHYGqCH/Photo-1631671292857.jpg');
+  background-position: 50%;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card .content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 10px;
+}
+
+.card .header {
+  display: flex;
+  align-items: center;
+}
+
+.card .profile-pic {
+  background-image: url('https://i.ibb.co/GHYGqCH/Photo-1631671292857.jpg');
+  background-position: 50%;
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.card .detail {
+  margin-left: 10px;
+}
+
+.card .posted {
+  font-size: 10px;
+  padding-top: 3px;
+}
+
+.card .desc {
+  padding-top: 10px;
+  line-height: 1.5;
+}
+
+.card .tags {
+  font-size: 12px;
+  color: #FFDF3B;
+  padding-top: 10px;
+}
+
+.card .footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.card .footer .like {
+  flex: 0 0 25%;
+}
+
+.card .footer .comment {
+  flex: 1;
+}
+
+.card .footer .share {
+  flex: 0 0 18%;
+}
+
+.card .footer i {
+  padding-right: 3px;
+}
+
+.nav {
+  background: #242C39;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 -4px 25px 0 rgba(0, 0, 0, .12);
+}
+
+.nav .icon {
+  flex: 1;
+  text-align: center;
+  color: #8E919A;
+}
+
+.nav .icon i {
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.nav .icon p {
+  font-size: 12px;
+}
+
+.active {
+  color: #FFDF3B !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.space {
+  height: 200px;
+}
+
+
+
+
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  padding: 30px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: 1.5s;
+  border-radius: 10px;
+}
+
+#popup.active {
+  left: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 1.5s;
+}
+
+@media screen and (max-width: 600px) {
+  #popup {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 200%;
+  }
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9f37ddf547.js"></script>
+  <title>Blog | Andre</title>
+</head>
+
+<body>
+  <!-- Hotjar Tracking Code for https://andrep13.github.io -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2605510,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+  <br>
+<!--Belum Pake --
+  <section class="live">
+  <!--Belum Pake--
+    <div class="person">
+      <div class="profile-pic" data-modal-target="#modal"></div>
+      <p class="name">Andre</p>
+    </div>
+
+<!--Belum Pake--
+  <div id="overlay"></div>
+  <!--Belum Pake--
+    <div class="person live-active">
+      <div class="profile-pic"></div>
+      <p class="name">Taylor</p>
+      <span><i class="fas fa-video"></i> Live</span>
+    </div>
+    <div class="person">
+      <div class="profile-pic"></div>
+      <p class="name">Jack</p>
+    </div>
+    <div class="person">
+      <div class="profile-pic"></div>
+      <p class="name">Jimmy</p>
+    </div>
+    <div class="person">
+      <div class="profile-pic"></div>
+      <p class="name">Alex</p>
+    </div>
+    <div class="person">
+      <div class="profile-pic"></div>
+      <p class="name">Halsey</p>
+    </div>
+    <div class="person">
+      <div class="profile-pic"></div>
+      <p class="name">Jamie</p>
+    </div>
+    <div class="person">
+      <div class="profile-pic"></div>
+      <p class="name">Oliver</p>
+    </div>
+    <!--Belum Pake-->
+  </section>
+
+  <section class="newsfeed">
+
+    <div class="card">
+      <div class="picture"></div>
+      <style type="text/css">*{margin:0;}body{ background-color: #f2f2f2;;font-family:arial,monospace;font-size:1em;}a,a:active,a:hover{color:#404040;text-decoration:none;}.mdr-container{width:auto; height:auto;padding:0px;padding-top:5px;padding-bottom:5px;background-image:linear-gradient(#ffffff,#ffffff);border:0.0px solid #d4d4d4;border-radius:0px;box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);}.inner-container{box-shadow: inset -1px 3px 7px rgba(0,0,0,0.2);border-radius:20px;}.mdr-kat-container{position:relative;width:100%; height:auto;padding-top:14px;padding-bottom:2px;background-image:linear-gradient(#1e9489,#1e9489);border:0px solid #d4d4d4;border-radius:0px;box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0)}td.tidakdigunakan{text-align:center;vertical-align:middle;padding:4px;padding-bottom:0px;padding-top:0px;}.td-kategori{text-align:center;vertical-align:top;padding:0px;padding-left:3px;padding-right:5px;padding-bottom:4px}.td-menu{text-align:center;vertical-align:top;padding:3px;padding-top:0px;padding-bottom:0px;font-size:0.6em;font-color:gray;word-wrap:break-word}div.scrollmenu{background-color:transparent;overflow:auto;white-space: nowrap;padding-left:0px;padding-top:2px;padding-right:0px;}div.scrollmenu a {display: inline-block;color:grey;text-align: center;padding:0px;text-decoration:none;}div.scrollmenu a:hover{background-color:#}.thumbnail-scroll {position:relative;display:block;margin:auto;padding-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;width:auto;height:180px;overflow:hidden;text-align:center;border-radius:5px;box-shadow:0px 1px 5px rgba(0,0,0,0.2);white-space:normal}.img-shadow{box-shadow:0px 0px 0px rgba(0, 0, 0, 0.3);border-radius:0px;}.mdr-img {width:auto;height:130px;box-shadow:0px 1px 5px rgba(0,0,0,0.2);border-radius:7px;}.mdr-img-kat{height:100%;width:auto;box-shadow:0px 0px 0px rgba(0,0,0,0.0);border-radius:0px;}div.space{background-color: transparent; height:13px;width:100%}.banner-slide{display:none;box-shadow:0px 3px 10px rgba(0,0,0,0.0);border-radius:0px;}.img-fav-menu{width:80%;max-width:140px;height:auto}
+/* Chat Dropdown */ .mdr-img-cs{width:100%;height:auto;box-shadow:0px 1px 3px rgba(0,0,0,0.3);border-radius:5px;} .mainmenubtn { background-color: transparent; color: white; border: none; cursor: pointer; padding:0px;} .dropdown { position: relative; display: inline-block; z-index:5} .dropdown-child { display: none; background-color:#ffffff; width: 190px; padding: 15px; box-shadow:1px 1px 100px rgba(0,0,0,0.7);border-radius:15px;position:absolute;left:0px;z-index:10} .dropdown-child a { color: white; text-decoration: none; display: block; } .dropdown:hover .dropdown-child { display: block; }
+/* News */
+.news{margin:auto;margin:10px;width:auto; height:auto;padding:5px;padding-top:10px;padding-bottom:10px;background-image:linear-gradient(#ffffff,#ffffff);border:1px solid #e8e8e8;border-radius:5px;box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);}
+.span-news{position:relative;left:0px;display: inline-flex;align-items: center}
+/* Button */ 
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #00a897;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-right: 0px;
+  vertical-align:middle;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 10px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+
+
+<!-- BANNER SLIDE -->
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+
+
+.gbr-slider{
+  position: relative;
+  width: 320px;
+  height: 500px;
+  margin: 0px;
+  background: #1D212B;
+}
+
+.gbr-slider .slide{
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.gbr-slider .slide.active{
+  clip-path: circle(150% at 0 50%);
+  transition: 2s;
+  transition-property: clip-path;
+}
+
+.gbr-slider .slide gbr{
+  z-index: 1;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+.gbr-slider .navigation{
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gbr-slider .navigation .btn{
+  background: rgba(255, 255, 255, 0.5);
+  width: 12px;
+  height: 12px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.gbr-slider .navigation .btn.active{
+  background: white;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 820px){
+  .gbr-slider{
+    width: 320px;
+    height: 375px;
+  }
+
+  .gbr-slider .slide .info{
+    padding: 10px 25px;
+  }
+
+  .gbr-slider .slide .info h2{
+    font-size: 35px;
+  }
+
+  .gbr-slider .slide .info p{
+    width: 70%;
+    font-size: 15px;
+  }
+
+  .gbr-slider .navigation{
+    bottom: 25px;
+  }
+
+  .gbr-slider .navigation .btn{
+    width: 10px;
+    height: 10px;
+    margin: 0px;
+  }
+}
+
+@media (max-width: 620px){
+  .gbr-slider{
+    width: 320px;
+    height: 250px;
+  }
+
+  .gbr-slider .slide .info{
+    padding: 10px 20px;
+  }
+
+  .gbr-slider .slide .info h2{
+    font-size: 30px;
+  }
+
+  .gbr-slider .slide .info p{
+    width: 80%;
+    font-size: 13px;
+  }
+
+  .gbr-slider .navigation{
+    bottom: 15px;
+  }
+
+  .gbr-slider .navigation .btn{
+    width: 8px;
+    height: 8px;
+    margin: 6px;
+  }
+}
+
+@media (max-width: 420px){
+  .gbr-slider{
+    width: 320px;
+    height: 192px;
+   margin-left: 0px;
+  }
+
+  .gbr-slider .navigation{
+    bottom: -0px;
+    margin: 0px 0px 0px;
+  }
+}
+      
+</style>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Slider | With Manual Buttons and Autoplay Navigation Visibility</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+<!--banner 1-->
+    <div class="gbr-slider">
+      <div class="slide active">
+        <img src="https://i.ibb.co/ft0f5QD/0001-7576561179-20210910-103129-0000.png" alt="" height="192px" width="320px">
+
+<!--banner 2-->
+      </div>
+      <div class="slide">
+        <img src="https://i.ibb.co/dfYB6FW/0001-293601761-20210424-193639-0000.png" alt="" height="192px">
+      </div>
+
+<!--banner 3-->
+      <div class="slide">
+        <img src="https://i.ibb.co/30LzKC5/0001-293510668-20210424-193324-0000.png" alt="" height="192px">
+
+      </div>
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function(){
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          });
+
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 0;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 5500);
+      }
+      repeater();
+    }
+    repeat();
+    </script>
+      <div class="content">
+        <div class="header">
+          <div class="profile-pic"></div>
+          <div class="detail">
+            <p class="name">Crowdshop</p>
+            <p class="posted">Kamis, 16 September 2021</p>
+          </div>
+        </div>
+        <div class="desc">
+          Crowdshop Adalah Website Yang Saya Buat Untuk Kalian Yang Memiliki Bisnis Online, Dengan Memberi Link Toko Online Kalian Dengan Mudah, Pemesanan Produk Yang Kami Gunakan Adalah Manual Yang Harus Mengisi Form Lalu Terkirim Melalui WhatsApp. Harap Berhati Hati Atas Penipuan Karena Kami Hanya Menyediakan Website Tersebut.
+            <br><br>
+            Jika Kalian Tertipu Itu Tanggung Jawab Kalian Sendiri Kami Hanya Penyedia Pembuatan Website Tersebut. Kalian Juga Bisa Mengreport Website Tersebut Dan Kami Akan Mengecek Apakah Itu Benar Benar Penipuan, Jika Benar Maka Akun Tersebut Akan Kami Blokir Dan Tidak Dapat Membuat Online Shop Kepada Kami Lagi.
+        </div>
+        <div class="tags">
+          <span>#Olshop</span>
+          <span>#Crowdshop</span>
+        </div>
+        <br>
+        <!--Belum Pake--
+        <div class="footer">
+          <div class="like">
+            <i class="fas fa-heart"></i>
+            <span>12k</span>
+          </div>
+          <div class="comment">
+            <i class="fas fa-comment"></i>
+            <span>12k</span>
+          </div>
+          <div class="share">
+            <i class="fas fa-share"></i>
+            <span>12k</span>
+          </div>
+            <!--Belum Pake-->
+        </div>
+      </div>
+    </div>
+    
+  <!--Belum Pake--
+    <div class="card">
+      <div class="picture"></div>
+      <div class="content">
+        <div class="header">
+          <div class="profile-pic"></div>
+          <div class="detail">
+            <p class="name">Miranda</p>
+            <p class="posted">2 hours ago</p>
+          </div>
+        </div>
+        <div class="desc">
+          "Actually, the best gift you could have given her was a lifetime or adventures" Alice in Wonderland- I've
+          always loved this quote. what's your favourite quote?
+        </div>
+        <div class="tags">
+          <span>#party</span>
+          <span>#colorful</span>
+        </div>
+        <div class="footer">
+          <div class="like">
+            <i class="fas fa-heart"></i>
+            <span>12k</span>
+          </div>
+          <div class="comment">
+            <i class="fas fa-comment"></i>
+            <span>12k</span>
+          </div>
+          <div class="share">
+            <i class="fas fa-share"></i>
+            <span>12k</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="picture"></div>
+      <div class="content">
+        <div class="header">
+          <div class="profile-pic"></div>
+          <div class="detail">
+            <p class="name">Miranda</p>
+            <p class="posted">2 hours ago</p>
+          </div>
+        </div>
+        <div class="desc">
+          "Actually, the best gift you could have given her was a lifetime or adventures" Alice in Wonderland- I've
+          always loved this quote. what's your favourite quote?
+        </div>
+        <div class="tags">
+          <span>#party</span>
+          <span>#colorful</span>
+        </div>
+        <div class="footer">
+          <div class="like">
+            <i class="fas fa-heart"></i>
+            <span>12k</span>
+          </div>
+          <div class="comment">
+            <i class="fas fa-comment"></i>
+            <span>12k</span>
+          </div>
+          <div class="share">
+            <i class="fas fa-share"></i>
+            <span>12k</span>
+          </div>
+        </div>
+          <!--Belum Pake-->
+      </div>
+    </div>
+
+  </section>
+<!-- Gak Pake --
+  <section class="nav">
+    <div class="icon active">
+      <i class="fas fa-home"></i>
+      <p>Home</p>
+    </div>
+    
+    <a style="text-decoration: none; color: #8E919A" data-modal-target="#popup">
+    <div class="icon">
+      <i class="fas fa-globe"></i>
+      <p>Live</p></a>
+    </div>
+    
+        <a style="text-decoration: none; color: #8E919A" data-modal-target="#popup">
+    <div class="icon">
+      <i class="fas fa-comment-dots"></i>
+      <p>Chats</p></a>
+    </div>
+    
+        <a style="text-decoration: none; color: #8E919A" data-modal-target="#popup">
+    <div class="icon">
+      <i class="fas fa-bell"></i>
+      <p>Notifications</p></a>
+    </div>
+    
+        <a style="text-decoration: none; color: #8E919A" data-modal-target="#popup">
+    <div class="icon">
+      <i class="fas fa-user"></i>
+      <p>Profile</p></a>
+    </div>
+  </section>
+
+  <div class="space"></div>
+
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">New Project</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body" style="color: black;">
+      Segera Hadir Project Website Online Shop Kalian Juga Bisa Menggunakan Website Tersebut Tungguin Saja.
+    </div>
+  </div>
+  
+  
+    <div class="modal" id="popup">
+    <div class="modal-header">
+      <div class="title">Alert</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body" style="color: black;">
+      Fitur Ini Segera Hadir
+    </div>
+  </div>
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
+
+<script>
+  anime({
+  targets: '.nav .icon i',
+  translateX: [100, 0],
+  duration: 1200,
+  opacity: [0, 1],
+  delay: (el, i) => {
+    return 300 + 100 * i;
+  },
+})
+
+anime({
+  targets: '.nav .icon p',
+  duration: 1200,
+  opacity: [0, 1],
+  delay: 700
+})
+
+anime({
+  targets: '.live .person',
+  translateY: [100, 0],
+  duration: 1200,
+  delay: (el, i) => {
+    return 1000 + 100 * i;
+  },
+})
+
+anime({
+  targets: '.like i',
+  easing: 'easeOutExpo',
+  scale: [2, 1],
+  opacity: [0, 1],
+  delay: 1200
+})
+
+anime({
+  targets: '.comment i',
+  easing: 'easeOutExpo',
+  scale: [2, 1],
+  opacity: [0, 1],
+  delay: 1300
+})
+
+anime({
+  targets: '.share i',
+  easing: 'easeOutExpo',
+  scale: [2, 1],
+  opacity: [0, 1],
+  delay: 1400
+})
+
+anime({
+  targets: '.newsfeed .card',
+  translateY: [300, 0],
+  easing: 'easeOutExpo',
+  opacity: [0, 1],
+  delay: (el, i) => 700 + 300 * i
+})
+
+
+
+
+
+
+
+
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)
+  })
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+  })
+})
+
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}
+
+    function toggle() {
+      var blur = document.getElementById('blur');
+      blur.classList.toggle('active')
+
+      var popup = document.getElementById('popup');
+      popup.classList.toggle('active')
+    }
+</script>
+
+<!--
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blog-andre.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>

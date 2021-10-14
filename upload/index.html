@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Blog | Upload</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="file-upload__modal" role="section">
+    <h1 class="file-upload__modal-title" role="heading">Upload File</h1>
+  <p class="file-upload__error" role="alertdialog"></p>
+    <ul class="file__list js-file__list" role="list"></ul>
+
+    <form class="file-upload__form js-dropzone" role="form">
+      <input
+        type="file"
+        id="file-dropzone"
+        class="file__input js-file__input"
+        multiple
+      >
+      <label
+        class="file__input-label"
+        for="file-dropzone"
+      >Drag file here or <button class="file__input-label-button" role="button">browse</button></label>
+    </form>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
