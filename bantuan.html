@@ -350,6 +350,278 @@ ul li:before {
 
   /* CSS Multiple Whatsapp Chat */
 #whatsapp-chat{position:fixed;background:#fff;width:350px;border-radius:10px;box-shadow:0 1px 15px rgba(32,33,36,.28);bottom:90px;right:30px;overflow:hidden;z-index:99;animation-name:showchat;animation-duration:1s;transform:scale(1)}a.blantershow-chat{background:linear-gradient(to right top,#6f96f3,#164ed2);color:#fff;position:fixed;z-index:98;bottom:25px;right:30px;font-size:15px;padding:10px 20px;border-radius:30px;box-shadow:0 1px 15px rgba(32,33,36,.28)}a.blantershow-chat i{transform:scale(1.2);margin:0 10px 0 0}.header-chat{background:linear-gradient(to right top,#6f96f3,#164ed2);color:#fff;padding:20px}.header-chat h3{margin:0 0 10px}.header-chat p{font-size:14px;line-height:1.7;margin:0}.info-avatar{position:relative}.info-avatar img{border-radius:100%;width:50px;float:left;margin:0 10px 0 0}.info-avatar:before{content:'\f232';z-index:1;font-family:"Font Awesome 5 Brands";background:#23ab23;color:#fff;padding:4px 5px;border-radius:100%;position:absolute;top:30px;left:30px}a.informasi{padding:20px;display:block;overflow:hidden;animation-name:showhide;animation-duration:2.5s}a.informasi:hover{background:#f1f1f1}.info-chat span{display:block}#get-label,span.chat-label{font-size:12px;color:#888}#get-nama,span.chat-nama{margin:5px 0 0;font-size:15px;font-weight:700;color:#222}#get-label,#get-nama{color:#fff}span.my-number{display:none}.blanter-msg{color:#444;padding:20px;font-size:12.5px;text-align:center;border-top:1px solid #ddd}textarea#chat-input{border:none;font-family:'Arial',sans-serif;width:100%;height:20px;outline:none;resize:none}a#send-it{color:#555;width:60px;margin:-5px 0 0 5px;font-weight:700;padding:8px;background:#eee;border-radius:10px}.first-msg{background:#f5f5f5;padding:30px;text-align:center}.first-msg span{background:#e2e2e2;color:#333;font-size:14.2px;line-height:1.7;border-radius:10px;padding:15px 20px;display:inline-block}.start-chat .blanter-msg{display:flex}#get-number{display:none}a.close-chat{position:absolute;top:5px;right:15px;color:#fff;font-size:30px}@keyframes showhide{from{transform:scale(.5);opacity:0}}@keyframes showchat{from{transform:scale(0);opacity:0}}@media screen and (max-width:480px){#whatsapp-chat{width:auto;left:5%;right:5%;font-size:80%}}.hide{display:none;animation-name:showhide;animation-duration:1.5s;transform:scale(1);opacity:1}.show{display:block;animation-name:showhide;animation-duration:1.5s;transform:scale(1);opacity:1}
+
+
+
+  /* Load Settings */
+
+.no-scroll-y {
+
+    overflow-y: hidden;
+}
+
+#preloader-section{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+}
+
+
+/* Preloader */
+.ctn-preloader {
+    -webkit-box-align: center;
+            align-items: center;
+  
+  /* Show or Hide cursor when hover of Preloader*/
+  cursor: none;
+    display: -webkit-box;
+    display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+          justify-content: center;
+    position: fixed;
+    left: 0;
+  top: 0;
+    width: 100%;
+  z-index: 9999;
+}
+
+.ctn-preloader .animation-preloader {
+    position: absolute;
+  z-index: 100;
+}
+
+/* Spinner loading */
+.ctn-preloader .animation-preloader .spinner {
+  -webkit-animation: spinner 1s infinite linear;
+          animation: spinner 1s infinite linear;
+    border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #124618; /* It is not identified in alphabetical order so that it does not overwrite it */
+  height: 9em;
+  margin: 0 auto 3.5em auto;
+  width: 9em;
+}
+
+/* Text Loading */
+.ctn-preloader .animation-preloader .txt-loading {
+  font: bold 5em 'Montserrat', sans-serif;
+    text-align: center;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:before {
+  -webkit-animation: letters-loading 4s infinite;
+          animation: letters-loading 4s infinite;
+  color: #124618;
+  content: attr(data-text-preloader);
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading {
+    color: rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Letters Animation */
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(3):before {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(4):before {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(5):before {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(6):before {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(7):before {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(8):before {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(9):before {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(10):before {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(11):before {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(12):before {
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(13):before {
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(14):before {
+  -webkit-animation-delay: 2.6s;
+          animation-delay: 2.6s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(15):before {
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(16):before {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+/* Loader section Settings */
+.ctn-preloader .loader-section {
+  background-color: #ffffff;
+  height: 100%;
+    position: fixed;
+  top: 0;
+  width: calc(50% + 1px);
+}
+
+.ctn-preloader .loader-section.section-left {
+  left: 0;
+}
+
+.ctn-preloader .loader-section.section-right {
+  right: 0;
+}
+
+/* Fade effect in loading animation */
+.loaded .animation-preloader {
+  opacity: 0;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+/* Curtain effect */
+.loaded .loader-section.section-left {
+  -webkit-transform: translateX(-101%);
+          transform: translateX(-101%);
+  -webkit-transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2.000);
+  transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2.000);
+}
+
+.loaded .loader-section.section-right {
+  -webkit-transform: translateX(101%);
+          transform: translateX(101%);
+  -webkit-transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2.000);
+  transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2.000);
+}
+
+/* Preloader Animation */
+@-webkit-keyframes spinner {
+    to {
+        -webkit-transform: rotateZ(360deg);
+                transform: rotateZ(360deg);
+    }
+}
+@keyframes spinner {
+    to {
+        -webkit-transform: rotateZ(360deg);
+                transform: rotateZ(360deg);
+    }
+}
+
+/* Animation of the letters loading from the preloader */
+@-webkit-keyframes letters-loading {
+  0%,
+  75%,
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+            transform: rotateY(-90deg);
+  }
+
+  25%,
+  50% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+@keyframes letters-loading {
+  0%,
+  75%,
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+            transform: rotateY(-90deg);
+  }
+
+  25%,
+  50% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+/* Backward laptop size (laptop, tablet, cell phone) */
+@media screen and (max-width: 767px) {
+    /* Preloader */
+    /* Spinner Loading */   
+    .ctn-preloader .animation-preloader .spinner {
+        height: 8em;
+        width: 8em;
+    }
+
+    /* Text Loading */
+    .ctn-preloader .animation-preloader .txt-loading {
+      font: bold 3.5em 'Montserrat', sans-serif;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* Prelaoder */
+    /* Spinner Loading */
+    .ctn-preloader .animation-preloader .spinner {
+        height: 7em;
+        width: 7em;
+    }
+
+    /* Text Loading */
+    .ctn-preloader .animation-preloader .txt-loading {
+      font: bold 2em 'Montserrat', sans-serif;
+    }
+}
 </style>
 
 <!DOCTYPE html>
@@ -371,6 +643,46 @@ ul li:before {
 </head>
 
 <body>
+        <!-- Prevent Scroll -->
+
+    <div id="preloader-body" class="no-scroll-y">
+
+
+        <!-- Start: Preloader -->
+        <section id="preloader-section">
+            <div id="preloader">
+                <div id="ctn-preloader" class="ctn-preloader">
+                    <div class="animation-preloader">
+                        
+                        <!-- Spinner -->
+                        <div class="spinner"></div>
+                        
+                        <!-- Start: Text Loading -->
+                        <div class="txt-loading">
+                            <span data-text-preloader="M" class="letters-loading">M</span>
+                            <span data-text-preloader="E" class="letters-loading">E</span>
+                            <span data-text-preloader="X" class="letters-loading">X</span>
+                            <span data-text-preloader="A" class="letters-loading">A</span>
+                           <!--  <span data-text-preloader="I" class="letters-loading">I</span>
+                            <span data-text-preloader="V" class="letters-loading">V</span>
+                            <span data-text-preloader="E" class="letters-loading">E</span> -->
+                        </div>
+                        <!-- End: Text Loading -->
+
+                    </div>
+
+                    <!-- Start: Preloader sides - Model 1 -->
+                    <div class="loader-section section-left"></div>
+                    <div class="loader-section section-right"></div>
+                    <!-- End: Preloader sides - Model 1 -->
+
+                </div>
+            </div>
+        </section>
+        <!-- End: Preloader -->
+
+    </div>
+    
 <!-- partial:index.partial.html -->
 <section class="c-section">
   <h2 class="c-section__title"><span>Our Services</span></h2>
@@ -460,6 +772,43 @@ ul li:before {
     });
       /* Whatsapp Chat Widget by www.idblanter.com */
 $(document).on("click","#send-it",function(){var a=document.getElementById("chat-input");if(""!=a.value){var b=$("#get-number").text(),c=document.getElementById("chat-input").value,d="https://web.whatsapp.com/send",e=b,f="&text="+c;if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))var d="whatsapp://send";var g=d+"?phone="+e+f;window.open(g, '_blank')}}),$(document).on("click",".informasi",function(){document.getElementById("get-number").innerHTML=$(this).children(".my-number").text(),$(".start-chat,.get-new").addClass("show").removeClass("hide"),$(".home-chat,.head-home").addClass("hide").removeClass("show"),document.getElementById("get-nama").innerHTML=$(this).children(".info-chat").children(".chat-nama").text(),document.getElementById("get-label").innerHTML=$(this).children(".info-chat").children(".chat-label").text()}),$(document).on("click",".close-chat",function(){$("#whatsapp-chat").addClass("hide").removeClass("show")}),$(document).on("click",".blantershow-chat",function(){$("#whatsapp-chat").addClass("show").removeClass("hide")});
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+
+    
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+  setTimeout(function () {
+    $("#ctn-preloader").addClass("loaded");
+    // Once the preloader has finished, the scroll appears
+    $("#preloader-body").removeClass("no-scroll-y");
+
+    if ($("#ctn-preloader").hasClass("loaded")) {
+      // It is so that once the preloader is gone, the entire preloader section will removed
+      $("#preloader")
+        .delay(1000)
+        .queue(function () {
+          $(this).remove();
+
+          // Force Main page to show from the Start(Top) even if user scroll down on preloader
+
+          // Model 1 - Smooth
+          document
+            .getElementById("page-top")
+            .scrollIntoView({ behavior: "smooth" });
+          // Model 2 - Fast
+          // document.getElementById("page-top").scrollIntoView();
+        });
+    }
+  }, 3000);
+});
+
+
+
 </script>
 
 </html>
