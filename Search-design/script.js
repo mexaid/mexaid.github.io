@@ -94,7 +94,7 @@ new Vue({
       //local data
       imageModalData: {},
       imagesSearchString: '',
-      title: 'Image App',
+      title: 'Mexa',
       description: 'Hover for info, click for full image.',
       notLoggedInDescription: 'Log in to like, add, or modify images.',
       loggedInDescription: 'Like, or download with stats icons.',

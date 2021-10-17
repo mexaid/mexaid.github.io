@@ -129,7 +129,9 @@
     <div class="overlay" @click="toggleAddEditModal()"></div>
     <div class="modal addModal">
       <div class="close" @click="toggleAddEditModal()"><i class='fa fa-close'></i></div>
+      <!-- icon trash --
       <div v-show="modalData.modalType.indexOf('Edit') > -1" class="delete" @click="toggleDeleteModal()"><i class='fa fa-trash-o'></i></div>
+      <!-- icon trash -->
       <h2>{{ modalData.modalType }} Image</h2>
       <input placeholder="Image title" v-model="modalData.title" />
       <input placeholder="Image URL {imgbb.com}" v-model="modalData.url" />
@@ -140,6 +142,8 @@
       </span>
       <button v-show="modalData.modalType.indexOf('Add') > -1" @click="addNewImage()">Add Image</button>
       <button v-show="modalData.modalType.indexOf('Edit') > -1" @click="updateImage()">Update Image</button>
+      <br><br>
+      <button v-show="modalData.modalType.indexOf('Edit') > -1" @click="toggleDeleteModal()">Delete Image</button>
     </div>
   </div>
   <div id="deleteModalWrapper" class="modalWrapper" v-show="!loading && showDeleteModal" @keyup.esc="toggleDeleteModal(true)">

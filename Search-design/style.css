@@ -1,7 +1,5 @@
 /* Googlefont Poppins CDN Link */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
 *{
   margin: 0;
   padding: 0;
@@ -712,18 +710,18 @@ a:hover, a:active {
 }
 
 .buttons {
-    margin: 10%;
+    margin: 50%;
     text-align: center;
 }
 
 .btn-hover {
     width: 200px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
     margin: 20px;
-    height: 55px;
+    height: 50px;
     text-align:center;
     border: none;
     background-size: 300% 100%;
