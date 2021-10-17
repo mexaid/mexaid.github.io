@@ -5,7 +5,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>Mexa | Search </title>
+    <title> Responsive Drop Down Navigation Menu | CodingLab </title>
     <link rel="stylesheet" href="style.css">
     <!-- Boxicons CDN Link -->
       <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -13,7 +13,9 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
-  
+  <div id="vue" class="hidden">
+    <div class="content">
+      <div class="header">
   
   <nav>
     <div class="navbar">
@@ -31,7 +33,7 @@
             <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
             <ul class="htmlCss-sub-menu sub-menu">
               <li><a href="#">Ui/Ux</a></li>
-              <li><a >Design Website</a></li>
+              <li><a href="#">Design Website</a></li>
               <!-- More -->
               <li class="more">
                 <span><a href="#">More</a>
@@ -47,23 +49,24 @@
           </li>
           <!-- More -->
           <li>
-            <a >Template Website</a>
+            <a href="#">Template Website</a>
             <i class='bx bxs-chevron-down js-arrow arrow '></i>
             <ul class="js-sub-menu sub-menu">
               <li><a href="#">Terpopuler</a></li>
             </ul>
           </li>
+          <!-- More -->
+          <li><a class="sidebar-logo" @click="toggleLogin()">Login</a></li>
           <!-- More --
-          <li><a href="#">ABOUT US</a></li>
           <li><a href="#">CONTACT US</a></li>
           <!-- More -->
         </ul>
       </div>
+      
       <div class="search-box">
-        <div class="buttons">
-        <i class='bx bx-support'></i>
+        <i class='bx bx-search'></i>
         <div class="input-box">
-    <button class="btn-hover color-8">Support</button>
+          <input v-model="imagesSearchString" placeholder="Cari Gambar Apa?" style="width: 290px;"/>
         </div>
       </div>
     </div>
@@ -71,13 +74,11 @@
   
   <br><br><br>
   <!-- partial:index.partial.html -->
-<div id="vue" class="hidden">
-  <div class="content">
-    <div class="header">
+
       <h1>{{ title }}</h1>
       <!-- Upload -->
       <button @click="toggleAddEditModal('add')" class="addImage" v-show="loggedIn">Add New Image</button>
-      <!-- Upload -->
+      <!-- Upload --
       <input v-model="imagesSearchString" placeholder="Cari Gambar Apa?" />
       <button class="reset" @click="resetSearchString()">Reset</button>
       <!-- Upload -->
