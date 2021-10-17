@@ -47,7 +47,7 @@
               </li>
             </ul>
           </li>
-          <!-- More -->
+          <!-- More --
           <li>
             <a href="#">Template Website</a>
             <i class='bx bxs-chevron-down js-arrow arrow '></i>
@@ -56,7 +56,11 @@
             </ul>
           </li>
           <!-- More -->
-          <li><a class="sidebar-logo" @click="toggleLogin()">Login</a></li>
+          <span class="edit" @click="toggleLogin()">
+          <span v-show="!loggedIn" style="color: white;"><i class="fa fa-sign-in" style="color: white;"></i> Log In</span>
+          <span v-show="loggedIn" style="color: white;"><i class="fa fa-sign-out" style="color: white;"></i> Log Out</span>
+    </span>
+          <button @click="toggleAddEditModal('add')" class="addImage" v-show="loggedIn">Add New Image</button>
           <!-- More --
           <li><a href="#">CONTACT US</a></li>
           <!-- More -->
@@ -73,10 +77,12 @@
   </nav>
   
   <br><br><br>
-  <!-- partial:index.partial.html -->
+  <!-- partial:index.partial.html --
 
       <h1>{{ title }}</h1>
-      <!-- Upload -->
+      <!-- Title -->
+      <h2>Hey, {{ myUsername }}!</h2>
+      <!-- Upload --
       <button @click="toggleAddEditModal('add')" class="addImage" v-show="loggedIn">Add New Image</button>
       <!-- Upload --
       <input v-model="imagesSearchString" placeholder="Cari Gambar Apa?" />
@@ -171,7 +177,10 @@
       <button @click="login()">{{ loginButtonText }}</button>
     </div>
     <div v-show="showLogin && loggedIn == true">
+      <br><br><br>
+      <!-- user --
       <h2>Hey, {{ myUsername }}!</h2>
+      <!-- user -->
       <p>{{ loggedInLoginDescription }}</p>
       <button @click="logout()">Log Out</button>
     </div>
