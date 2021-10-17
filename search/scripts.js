@@ -65,7 +65,7 @@ new Vue({
         "landing": "Try to be original, your username might be taken.",
         "missing": "Please enter a username AND password.",
         "error": "We have encountered an error, please reload your page and try again.",
-        "invalid": "Sorry, your password is invalid. Make sure you have everything correct. Caps matter!",
+        "invalid": "Password Anda Salah Atau Akun Telah Kami Blokir!",
         "loggedIn": "This user is already logged in.",
         "lockedOut": "You have attempted to login too many times, please come back later and try again." },
 
