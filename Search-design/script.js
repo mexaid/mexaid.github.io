@@ -2,6 +2,10 @@
 
 
 
+
+
+
+
 // Setup Firebase
 
 //------------------
@@ -289,8 +293,8 @@ new Vue({
 
       let link = document.createElement('a');
       document.body.appendChild(link);
-      link.href = image.url;
-      link.download = image.url;
+      link.href = image.urlDown;
+      link.download = image.urlDown;
       link.click();
     },
 
